@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    omniauth-free_agent (0.2.0)
+    omniauth-free_agent (0.3.0)
       omniauth
       omniauth-oauth2
 
