@@ -14,7 +14,7 @@ module OmniAuth
       }
 
       uid do
-        user_info["url"]
+        user_info["url"].split("/").last.to_i
       end
 
       info do
@@ -33,11 +33,13 @@ module OmniAuth
       end
 
       def user_info
-        @user_info ||= access_token.get("/v2/users/me").parsed["user"]
+        @user_info ||= access_token.get("/v2/users/me").parsed
+        @user_info["user"] || {}
       end
 
       def company_info
         @company_info ||= access_token.get("/v2/company").parsed
+        @company_info["company"] || {}
       end
 
       def callback_url
