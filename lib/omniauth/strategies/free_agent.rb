@@ -22,6 +22,7 @@ module OmniAuth
           email: user_info["email"],
           first_name: user_info["first_name"],
           last_name: user_info["last_name"],
+          name: "#{user_info["first_name"]} #{user_info["last_name"]}"
         }
       end
 
